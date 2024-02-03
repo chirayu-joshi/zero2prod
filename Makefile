@@ -2,6 +2,10 @@ install:
 	cargo install cargo-watch
 	cargo install cargo-tarpaulin
 	cargo install cargo-audit
+	cargo install cargo-edit
+
+	cargo add actix-web
+	cargo add tokio --features "macros rt-multi-thread"
 
 build:
 	cargo build
