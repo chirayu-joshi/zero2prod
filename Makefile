@@ -4,9 +4,6 @@ install:
 	cargo install cargo-audit
 	cargo install cargo-edit
 
-	cargo add actix-web
-	cargo add tokio --features "macros rt-multi-thread"
-
 build:
 	cargo build
 
@@ -23,6 +20,12 @@ audit_project:
 	cargo audit
 
 run_continous_integration: check_coverage check_linting check_formatting audit_project
+
+format_code:
+	cargo fmt
+
+test:
+	cargo test
 
 run:
 	cargo run
