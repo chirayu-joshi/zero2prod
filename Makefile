@@ -3,6 +3,17 @@ install:
 	cargo install cargo-tarpaulin
 	cargo install cargo-audit
 	cargo install cargo-edit
+	cargo install sqlx-cli --no-default-features --features postgres
+
+install_psql_locally_mac:
+	brew doctor
+	brew update
+	brew install libpq
+	brew link --force libpq
+
+start_db:
+	chmod +x scripts/init_db.sh
+	./scripts/init_db.sh
 
 build:
 	cargo build
